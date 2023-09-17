@@ -8,7 +8,7 @@ const create_buyer = async(reqbody) => {
     return Buyer.create(reqbody);
 }
 
-const get_buyer_list = async(reqbody) => {
+const get_buyer_list = async() => {
     return Buyer.find();
 }
 

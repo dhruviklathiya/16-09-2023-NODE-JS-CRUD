@@ -8,7 +8,7 @@ const create_review = async(reqbody) => {
     return Review.create(reqbody);
 }
 
-const get_review_list = async(reqbody) => {
+const get_review_list = async() => {
     return Review.find();
 }
 

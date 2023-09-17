@@ -8,7 +8,7 @@ const create_comment = async(reqbody) => {
     return Comment.create(reqbody);
 }
 
-const get_comment_list = async(reqbody) => {
+const get_comment_list = async() => {
     return Comment.find();
 }
 

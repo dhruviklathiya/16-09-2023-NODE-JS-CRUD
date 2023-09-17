@@ -8,7 +8,7 @@ const create_blog = async(reqbody) => {
     return Blog.create(reqbody);
 }
 
-const get_blog_list = async(reqbody) => {
+const get_blog_list = async() => {
     return Blog.find();
 }
 

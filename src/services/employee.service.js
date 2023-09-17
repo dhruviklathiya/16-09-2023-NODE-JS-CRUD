@@ -8,7 +8,7 @@ const create_employee = async(reqbody) => {
     return Employee.create(reqbody);
 }
 
-const get_employee_list = async(reqbody) => {
+const get_employee_list = async() => {
     return Employee.find();
 }
 

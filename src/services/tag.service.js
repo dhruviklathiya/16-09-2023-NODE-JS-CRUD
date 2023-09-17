@@ -8,7 +8,7 @@ const create_tag = async(reqbody) => {
     return Tag.create(reqbody);
 }
 
-const get_tag_list = async(reqbody) => {
+const get_tag_list = async() => {
     return Tag.find();
 }
 

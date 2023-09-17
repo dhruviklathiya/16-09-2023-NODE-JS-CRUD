@@ -8,7 +8,7 @@ const create_customer = async(reqbody) => {
     return Customer.create(reqbody);
 }
 
-const get_customer_list = async(reqbody) => {
+const get_customer_list = async() => {
     return Customer.find();
 }
 

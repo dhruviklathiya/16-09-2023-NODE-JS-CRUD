@@ -8,7 +8,7 @@ const create_payment = async(reqbody) => {
     return Payment.create(reqbody);
 }
 
-const get_payment_list = async(reqbody) => {
+const get_payment_list = async() => {
     return Payment.find();
 }
 

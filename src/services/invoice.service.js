@@ -8,7 +8,7 @@ const create_invoice = async(reqbody) => {
     return Invoice.create(reqbody);
 }
 
-const get_invoice_list = async(reqbody) => {
+const get_invoice_list = async() => {
     return Invoice.find();
 }
 
