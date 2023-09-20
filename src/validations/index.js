@@ -22,7 +22,7 @@ module.exports.survey_Validation = require("./survey.validation")
 
 
 module.exports.sport_name_Validation = require("./sport.name.validation.js")
-module.exports.sport_founders_Validation = require("./sport.founder.validation")
+module.exports.sport_founder_Validation = require("./sport.founder.validation")
 module.exports.sport_contact_Validation = require("./sport.contact.validation")
 module.exports.sport_gallery_Validation = require("./sport.gallery.validation")
 module.exports.sport_team_Validation = require("./sport.team.validation")
@@ -38,7 +38,7 @@ module.exports.crypto_founder_Validation = require("./crypto.founder.validation"
 module.exports.crypto_type_Validation = require("./crypto.type.validation")
 module.exports.crypto_rating_Validation = require("./crypto.rating.validation")
 module.exports.crypto_faq_Validation = require("./crypto.faq.validation")
-module.exports.crypto_links_Validation = require("./crypto.link.validation")
+module.exports.crypto_link_Validation = require("./crypto.link.validation")
 module.exports.crypto_client_Validation = require("./crypto.client.validation")
 module.exports.crypto_calendar_Validation = require("./crypto.calendar.validation")
 module.exports.crypto_news_Validation = require("./crypto.news.validation")
