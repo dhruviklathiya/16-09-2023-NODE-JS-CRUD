@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const sport_name_Schema = new mongoose.Schema(
     {
-        sport_name_name:{
+        sport_name:{
             type:String,
             trim:true
         },
-        sport_name_desc:{
+        sport_desc:{
             type:String,
             trim:true
         },

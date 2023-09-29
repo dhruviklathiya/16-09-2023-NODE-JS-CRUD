@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
 /** create sport */
-const create_sport_name = {
+const create_sport = {
   body: Joi.object().keys({
     sport_name: Joi.string().required().trim(),
     sport_desc: Joi.string().required().trim(),
@@ -9,5 +9,5 @@ const create_sport_name = {
 };
 
 module.exports = {
-    create_sport_name
+    create_sport
 }

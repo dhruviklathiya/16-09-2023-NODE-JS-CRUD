@@ -1,5 +1,6 @@
 const { crypto_type_Service } = require("../services");
 
+// Create crypto type
 const create_crypto_type = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_type = async(req,res) => {
     }
 }
 
+// Update crypto type
 const update_crypto_type = async(req,res) => {
     try {
         const crypto_type_id = req.params.crypto_typeId;
@@ -49,6 +51,7 @@ const update_crypto_type = async(req,res) => {
     }
 }
 
+// Delete crypto type
 const delete_crypto_type = async(req,res) => {
     try {
         const crypto_type_id = req.params.crypto_typeId;
@@ -72,6 +75,7 @@ const delete_crypto_type = async(req,res) => {
     }
 }
 
+// Crypto type list
 const get_crypto_type_list = async(req,res) => {
     try {
         const crypto_type_list = await crypto_type_Service.get_crypto_type_list();
@@ -80,7 +84,7 @@ const get_crypto_type_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get crypto_type list dispatch successfully ^-^ ",
+          message: "Get crypto type list dispatch successfully ^-^ ",
           data: crypto_type_list,
         });
       } catch (error) {

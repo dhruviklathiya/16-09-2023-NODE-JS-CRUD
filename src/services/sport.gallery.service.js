@@ -1,7 +1,8 @@
 const { Sport_gallery } = require("../models");
 
-const get_sport_gallery_by_name = async(sport_gallery_name) => {
-    return Sport_gallery.findOne({sport_gallery_name})
+// Get sport gallery by no
+const get_sport_gallery_by_no = async(sport_gallery_no) => {
+    return Sport_gallery.findOne({sport_gallery_no})
 }
 
 const create_sport_gallery = async(reqbody) => {
@@ -25,7 +26,7 @@ const delete_sport_gallery = async(sport_gallery_id) => {
 }
 
 module.exports = {
-    get_sport_gallery_by_name,
+    get_sport_gallery_by_no,
     create_sport_gallery,
     get_sport_gallery_list,
     get_sport_gallery_by_id,

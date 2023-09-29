@@ -1,5 +1,6 @@
 const { sport_news_Service } = require("../services");
 
+// Create sport news
 const create_sport_news = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_sport_news = async(req,res) => {
     }
 }
 
+// Update sport news
 const update_sport_news = async(req,res) => {
     try {
         const sport_news_id = req.params.sport_newsId;
@@ -49,6 +51,7 @@ const update_sport_news = async(req,res) => {
     }
 }
 
+// Delete sport news
 const delete_sport_news = async(req,res) => {
     try {
         const sport_news_id = req.params.sport_newsId;
@@ -72,6 +75,7 @@ const delete_sport_news = async(req,res) => {
     }
 }
 
+// Sport news list
 const get_sport_news_list = async(req,res) => {
     try {
         const sport_news_list = await sport_news_Service.get_sport_news_list();
@@ -80,7 +84,7 @@ const get_sport_news_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get sport_news list dispatch successfully ^-^ ",
+          message: "Get sport news list dispatch successfully ^-^ ",
           data: sport_news_list,
         });
       } catch (error) {

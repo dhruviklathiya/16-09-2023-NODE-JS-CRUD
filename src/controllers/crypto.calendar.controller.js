@@ -1,5 +1,6 @@
 const { crypto_calendar_Service } = require("../services");
 
+// Create crypto calendar
 const create_crypto_calendar = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_calendar = async(req,res) => {
     }
 }
 
+// Update crypto calendar
 const update_crypto_calendar = async(req,res) => {
     try {
         const crypto_calendar_id = req.params.crypto_calendarId;
@@ -49,6 +51,7 @@ const update_crypto_calendar = async(req,res) => {
     }
 }
 
+// Delete crypto calendar
 const delete_crypto_calendar = async(req,res) => {
     try {
         const crypto_calendar_id = req.params.crypto_calendarId;
@@ -72,6 +75,7 @@ const delete_crypto_calendar = async(req,res) => {
     }
 }
 
+// Crypto calendar list
 const get_crypto_calendar_list = async(req,res) => {
     try {
         const crypto_calendar_list = await crypto_calendar_Service.get_crypto_calendar_list();
@@ -80,7 +84,7 @@ const get_crypto_calendar_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get crypto_calendar list dispatch successfully ^-^ ",
+          message: "Get crypto calendar list dispatch successfully ^-^ ",
           data: crypto_calendar_list,
         });
       } catch (error) {

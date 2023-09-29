@@ -21,8 +21,8 @@ const forumRouter = require("./forum.route")
 const pollRouter = require("./poll.route")
 const surveyRouter = require("./survey.route")
 
-const sport_nameRouter = require("./sport.name.validation.route.js")
-const sport_foundersRouter = require("./sport.founder.route.js")
+const sport_nameRouter = require("./sport.name.route.js")
+const sport_founderRouter = require("./sport.founder.route.js")
 const sport_contactRouter = require("./sport.contact.route.js")
 const sport_galleryRouter = require("./sport.gallery.route.js")
 const sport_teamRouter = require("./sport.team.route.js")
@@ -70,7 +70,7 @@ router.use("/poll",pollRouter);
 router.use("/survey",surveyRouter);
 
 router.use("/sport_name",sport_nameRouter);
-router.use("/sport_founders",sport_foundersRouter);
+router.use("/sport_founder",sport_founderRouter);
 router.use("/sport_contact",sport_contactRouter);
 router.use("/sport_gallery",sport_galleryRouter);
 router.use("/sport_team",sport_teamRouter);

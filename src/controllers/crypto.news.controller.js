@@ -1,5 +1,6 @@
 const { crypto_news_Service } = require("../services");
 
+// Create crypto news
 const create_crypto_news = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_news = async(req,res) => {
     }
 }
 
+// Update crypto news
 const update_crypto_news = async(req,res) => {
     try {
         const crypto_news_id = req.params.crypto_newsId;
@@ -49,6 +51,7 @@ const update_crypto_news = async(req,res) => {
     }
 }
 
+// Delete crypto news
 const delete_crypto_news = async(req,res) => {
     try {
         const crypto_news_id = req.params.crypto_newsId;
@@ -72,6 +75,7 @@ const delete_crypto_news = async(req,res) => {
     }
 }
 
+// Crypto news list
 const get_crypto_news_list = async(req,res) => {
     try {
         const crypto_news_list = await crypto_news_Service.get_crypto_news_list();
@@ -80,7 +84,7 @@ const get_crypto_news_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get crypto_news list dispatch successfully ^-^ ",
+          message: "Get crypto news list dispatch successfully ^-^ ",
           data: crypto_news_list,
         });
       } catch (error) {

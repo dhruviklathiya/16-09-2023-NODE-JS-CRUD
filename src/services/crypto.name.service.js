@@ -1,34 +1,34 @@
-const { Crypto_name } = require("../models");
+const { Crypto } = require("../models");
 
-const get_crypto_name_by_name = async(crypto_name_name) => {
-    return Crypto_name.findOne({crypto_name_name})
+const get_crypto_by_name = async(crypto) => {
+    return Crypto.findOne({crypto})
 }
 
-const create_crypto_name = async(reqbody) => {
-    return Crypto_name.create(reqbody);
+const create_crypto = async(reqbody) => {
+    return Crypto.create(reqbody);
 }
 
-const get_crypto_name_list = async() => {
-    return Crypto_name.find();
+const get_crypto_list = async() => {
+    return Crypto.find();
 }
 
-const get_crypto_name_by_id = async(crypto_name_id) => {
-    return Crypto_name.findById(crypto_name_id);
+const get_crypto_by_id = async(crypto_id) => {
+    return Crypto.findById(crypto_id);
 }
 
-const update_crypto_name = async(crypto_name_id,reqbody) => {
-    return Crypto_name.findByIdAndUpdate(crypto_name_id,{$set:reqbody});
+const update_crypto = async(crypto_id,reqbody) => {
+    return Crypto.findByIdAndUpdate(crypto_id,{$set:reqbody});
 }
 
-const delete_crypto_name = async(crypto_name_id) => {
-    return Crypto_name.findByIdAndDelete(crypto_name_id);
+const delete_crypto = async(crypto_id) => {
+    return Crypto.findByIdAndDelete(crypto_id);
 }
 
 module.exports = {
-    get_crypto_name_by_name,
-    create_crypto_name,
-    get_crypto_name_list,
-    get_crypto_name_by_id,
-    update_crypto_name,
-    delete_crypto_name
+    get_crypto_by_name,
+    create_crypto,
+    get_crypto_list,
+    get_crypto_by_id,
+    update_crypto,
+    delete_crypto
 }

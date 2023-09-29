@@ -1,5 +1,6 @@
 const { crypto_link_Service } = require("../services");
 
+// Create crypto link
 const create_crypto_link = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_link = async(req,res) => {
     }
 }
 
+// Update crypto link
 const update_crypto_link = async(req,res) => {
     try {
         const crypto_link_id = req.params.crypto_linkId;
@@ -49,6 +51,7 @@ const update_crypto_link = async(req,res) => {
     }
 }
 
+// Delete crypto link
 const delete_crypto_link = async(req,res) => {
     try {
         const crypto_link_id = req.params.crypto_linkId;
@@ -72,6 +75,7 @@ const delete_crypto_link = async(req,res) => {
     }
 }
 
+// Crypto link list
 const get_crypto_link_list = async(req,res) => {
     try {
         const crypto_link_list = await crypto_link_Service.get_crypto_link_list();
@@ -80,7 +84,7 @@ const get_crypto_link_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get crypto_link list dispatch successfully ^-^ ",
+          message: "Get crypto link list dispatch successfully ^-^ ",
           data: crypto_link_list,
         });
       } catch (error) {

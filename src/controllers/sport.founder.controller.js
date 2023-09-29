@@ -1,11 +1,12 @@
 const { sport_founder_Service } = require("../services");
 
+// Create sport founder
 const create_sport_founder = async(req,res) => {
     try {
         const reqbody = req.body;
         const sport_founder_exist = await sport_founder_Service.get_sport_founder_by_name(reqbody.sport_founder_name);
         if(sport_founder_exist){
-            throw new Error("Sport founder on this name already exist -!- ");
+            throw new Error("Sport founder by this name already exist -!- ");
         }
         const sport_founder = await sport_founder_Service.create_sport_founder(reqbody);
         if(!sport_founder){
@@ -24,6 +25,7 @@ const create_sport_founder = async(req,res) => {
     }
 }
 
+// Update sport founder
 const update_sport_founder = async(req,res) => {
     try {
         const sport_founder_id = req.params.sport_founderId;
@@ -49,6 +51,7 @@ const update_sport_founder = async(req,res) => {
     }
 }
 
+// Delete sport founder
 const delete_sport_founder = async(req,res) => {
     try {
         const sport_founder_id = req.params.sport_founderId;
@@ -72,15 +75,16 @@ const delete_sport_founder = async(req,res) => {
     }
 }
 
+// Sport founder list
 const get_sport_founder_list = async(req,res) => {
     try {
         const sport_founder_list = await sport_founder_Service.get_sport_founder_list();
         if(!sport_founder_list){
-          throw new Error("Sport founder list data not found -!- ");
+          throw new Error("Sport founder list does not exist -!- ");
         }
         res.status(200).json({
           success: true,
-          message: "Get sport_founder list dispatch successfully ^-^ ",
+          message: "Get sport founder list dispatch successfully ^-^ ",
           data: sport_founder_list,
         });
       } catch (error) {

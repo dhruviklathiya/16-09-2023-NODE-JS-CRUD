@@ -1,5 +1,6 @@
 const { crypto_client_Service } = require("../services");
 
+// Create crypto client
 const create_crypto_client = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_client = async(req,res) => {
     }
 }
 
+// Update crypto client
 const update_crypto_client = async(req,res) => {
     try {
         const crypto_client_id = req.params.crypto_clientId;
@@ -49,6 +51,7 @@ const update_crypto_client = async(req,res) => {
     }
 }
 
+// Delete crypto client
 const delete_crypto_client = async(req,res) => {
     try {
         const crypto_client_id = req.params.crypto_clientId;
@@ -72,6 +75,7 @@ const delete_crypto_client = async(req,res) => {
     }
 }
 
+// Crypto client list
 const get_crypto_client_list = async(req,res) => {
     try {
         const crypto_client_list = await crypto_client_Service.get_crypto_client_list();
@@ -80,7 +84,7 @@ const get_crypto_client_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get crypto_client list dispatch successfully ^-^ ",
+          message: "Get crypto client list dispatch successfully ^-^ ",
           data: crypto_client_list,
         });
       } catch (error) {

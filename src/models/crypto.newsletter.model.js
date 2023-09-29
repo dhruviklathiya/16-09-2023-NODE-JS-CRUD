@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const crypto_newsletter_Schema = new mongoose.Schema(
     {
-        crypto_newsletter_name:{
+        crypto_newsletter_topic:{
             type:String,
             trim:true
         },

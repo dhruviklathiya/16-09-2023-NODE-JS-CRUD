@@ -1,5 +1,6 @@
 const { crypto_founder_Service } = require("../services");
 
+// Create crypto founder
 const create_crypto_founder = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_founder = async(req,res) => {
     }
 }
 
+// Update crypto founder
 const update_crypto_founder = async(req,res) => {
     try {
         const crypto_founder_id = req.params.crypto_founderId;
@@ -49,6 +51,7 @@ const update_crypto_founder = async(req,res) => {
     }
 }
 
+// Delete crypto founder
 const delete_crypto_founder = async(req,res) => {
     try {
         const crypto_founder_id = req.params.crypto_founderId;
@@ -72,6 +75,7 @@ const delete_crypto_founder = async(req,res) => {
     }
 }
 
+// Crypto founder list
 const get_crypto_founder_list = async(req,res) => {
     try {
         const crypto_founder_list = await crypto_founder_Service.get_crypto_founder_list();
@@ -80,7 +84,7 @@ const get_crypto_founder_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get crypto_founder list dispatch successfully ^-^ ",
+          message: "Get crypto founder list dispatch successfully ^-^ ",
           data: crypto_founder_list,
         });
       } catch (error) {

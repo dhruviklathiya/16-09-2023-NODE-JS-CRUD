@@ -1,11 +1,12 @@
 const { sport_result_Service } = require("../services");
 
+// Create sport event
 const create_sport_result = async(req,res) => {
     try {
         const reqbody = req.body;
         const sport_result_exist = await sport_result_Service.get_sport_result_by_name(reqbody.sport_result_name);
         if(sport_result_exist){
-            throw new Error("Sport result on this name already exist -!- ");
+            throw new Error("Sport result by this name already exist -!- ");
         }
         const sport_result = await sport_result_Service.create_sport_result(reqbody);
         if(!sport_result){
@@ -24,6 +25,7 @@ const create_sport_result = async(req,res) => {
     }
 }
 
+// Update sport event
 const update_sport_result = async(req,res) => {
     try {
         const sport_result_id = req.params.sport_resultId;
@@ -49,6 +51,7 @@ const update_sport_result = async(req,res) => {
     }
 }
 
+// Delete sport event
 const delete_sport_result = async(req,res) => {
     try {
         const sport_result_id = req.params.sport_resultId;
@@ -72,6 +75,7 @@ const delete_sport_result = async(req,res) => {
     }
 }
 
+// Sport event list
 const get_sport_result_list = async(req,res) => {
     try {
         const sport_result_list = await sport_result_Service.get_sport_result_list();
@@ -80,7 +84,7 @@ const get_sport_result_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get sport_result list dispatch successfully ^-^ ",
+          message: "Get sport result list dispatch successfully ^-^ ",
           data: sport_result_list,
         });
       } catch (error) {

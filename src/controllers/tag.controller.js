@@ -1,5 +1,5 @@
 const { tag_Service } = require("../services");
-
+// Create tag
 const create_tag = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -23,7 +23,7 @@ const create_tag = async(req,res) => {
         })
     }
 }
-
+// Update tag
 const update_tag = async(req,res) => {
     try {
         const tag_id = req.params.tagId;
@@ -48,7 +48,7 @@ const update_tag = async(req,res) => {
         })
     }
 }
-
+// Delete tag
 const delete_tag = async(req,res) => {
     try {
         const tag_id = req.params.tagId;
@@ -71,7 +71,7 @@ const delete_tag = async(req,res) => {
         })
     }
 }
-
+// Get tag list
 const get_tag_list = async(req,res) => {
     try {
         const tag_list = await tag_Service.get_tag_list();
@@ -90,7 +90,7 @@ const get_tag_list = async(req,res) => {
         });
       }
 }
-
+// Expoting controller object
 module.exports = {
     create_tag,
     get_tag_list,

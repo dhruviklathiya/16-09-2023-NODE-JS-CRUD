@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Create crypto founder
 const crypto_type_Schema = new mongoose.Schema(
     {
         crypto_type_name:{

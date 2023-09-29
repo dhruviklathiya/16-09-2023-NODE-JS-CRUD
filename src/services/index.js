@@ -32,7 +32,7 @@ module.exports.sport_event_Service = require("./sport.event.service")
 module.exports.sport_result_Service = require("./sport.result.service")
 module.exports.sport_news_Service = require("./sport.news.service")
 
-module.exports.crypto_name_Service = require("./crypto.name.service")
+module.exports.crypto_Service = require("./crypto.name.service")
 module.exports.crypto_founder_Service = require("./crypto.founder.service")
 module.exports.crypto_type_Service = require("./crypto.type.service")
 module.exports.crypto_rating_Service = require("./crypto.rating.service")

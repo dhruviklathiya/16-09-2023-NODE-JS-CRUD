@@ -1,11 +1,12 @@
 const { crypto_newsletter_Service } = require("../services");
 
+// Create crypto newsletter
 const create_crypto_newsletter = async(req,res) => {
     try {
         const reqbody = req.body;
-        const crypto_newsletter_exist = await crypto_newsletter_Service.get_crypto_newsletter_by_name(reqbody.crypto_newsletter_name);
+        const crypto_newsletter_exist = await crypto_newsletter_Service.get_crypto_newsletter_by_topic(reqbody.crypto_newsletter_topic);
         if(crypto_newsletter_exist){
-            throw new Error("Crypto newsletter on this name already exist -!- ");
+            throw new Error("Crypto newsletter on this topic already exist -!- ");
         }
         const crypto_newsletter = await crypto_newsletter_Service.create_crypto_newsletter(reqbody);
         if(!crypto_newsletter){
@@ -24,6 +25,7 @@ const create_crypto_newsletter = async(req,res) => {
     }
 }
 
+// Update crypto newsletter
 const update_crypto_newsletter = async(req,res) => {
     try {
         const crypto_newsletter_id = req.params.crypto_newsletterId;
@@ -49,6 +51,7 @@ const update_crypto_newsletter = async(req,res) => {
     }
 }
 
+// Delete crypto newsletter
 const delete_crypto_newsletter = async(req,res) => {
     try {
         const crypto_newsletter_id = req.params.crypto_newsletterId;
@@ -72,6 +75,7 @@ const delete_crypto_newsletter = async(req,res) => {
     }
 }
 
+// Crypto newsletter list
 const get_crypto_newsletter_list = async(req,res) => {
     try {
         const crypto_newsletter_list = await crypto_newsletter_Service.get_crypto_newsletter_list();
@@ -80,7 +84,7 @@ const get_crypto_newsletter_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get crypto_newsletter list dispatch successfully ^-^ ",
+          message: "Get crypto newsletter list dispatch successfully ^-^ ",
           data: crypto_newsletter_list,
         });
       } catch (error) {

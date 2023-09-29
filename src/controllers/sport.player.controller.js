@@ -1,5 +1,6 @@
 const { sport_player_Service } = require("../services");
 
+// Create sport player
 const create_sport_player = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_sport_player = async(req,res) => {
     }
 }
 
+// Update sport category
 const update_sport_player = async(req,res) => {
     try {
         const sport_player_id = req.params.sport_playerId;
@@ -49,6 +51,7 @@ const update_sport_player = async(req,res) => {
     }
 }
 
+// Delete sport category
 const delete_sport_player = async(req,res) => {
     try {
         const sport_player_id = req.params.sport_playerId;
@@ -72,6 +75,7 @@ const delete_sport_player = async(req,res) => {
     }
 }
 
+// Sport category list
 const get_sport_player_list = async(req,res) => {
     try {
         const sport_player_list = await sport_player_Service.get_sport_player_list();
@@ -80,7 +84,7 @@ const get_sport_player_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get sport_player list dispatch successfully ^-^ ",
+          message: "Get sport player list dispatch successfully ^-^ ",
           data: sport_player_list,
         });
       } catch (error) {

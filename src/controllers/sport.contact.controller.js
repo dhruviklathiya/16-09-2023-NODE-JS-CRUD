@@ -1,11 +1,12 @@
 const { sport_contact_Service } = require("../services");
 
+// Create sport contact
 const create_sport_contact = async(req,res) => {
     try {
         const reqbody = req.body;
-        const sport_contact_exist = await sport_contact_Service.get_sport_contact_by_name(reqbody.sport_contact_name);
+        const sport_contact_exist = await sport_contact_Service.get_sport_contact_by_path(reqbody.sport_contact_name);
         if(sport_contact_exist){
-            throw new Error("Sport contact on this name already exist -!- ");
+            throw new Error("Sport contact on this path already exist -!- ");
         }
         const sport_contact = await sport_contact_Service.create_sport_contact(reqbody);
         if(!sport_contact){
@@ -24,6 +25,7 @@ const create_sport_contact = async(req,res) => {
     }
 }
 
+// Update sport contact
 const update_sport_contact = async(req,res) => {
     try {
         const sport_contact_id = req.params.sport_contactId;
@@ -49,6 +51,7 @@ const update_sport_contact = async(req,res) => {
     }
 }
 
+// Delete sport contact
 const delete_sport_contact = async(req,res) => {
     try {
         const sport_contact_id = req.params.sport_contactId;
@@ -72,6 +75,7 @@ const delete_sport_contact = async(req,res) => {
     }
 }
 
+// Sport contact list
 const get_sport_contact_list = async(req,res) => {
     try {
         const sport_contact_list = await sport_contact_Service.get_sport_contact_list();
@@ -80,7 +84,7 @@ const get_sport_contact_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get sport_contact list dispatch successfully ^-^ ",
+          message: "Get sport contact list dispatch successfully ^-^ ",
           data: sport_contact_list,
         });
       } catch (error) {

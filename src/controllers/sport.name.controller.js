@@ -1,9 +1,10 @@
 const { sport_name_Service } = require("../services");
 
-const create_sport_name = async(req,res) => {
+// Create sport
+const create_sport = async(req,res) => {
     try {
         const reqbody = req.body;
-        const sport_name_exist = await sport_name_Service.get_sport_name_by_name(reqbody.sport_name_name);
+        const sport_name_exist = await sport_name_Service.get_sport_by_name(reqbody.sport_name);
         if(sport_name_exist){
             throw new Error("Sport on this name already exist -!- ");
         }
@@ -24,15 +25,16 @@ const create_sport_name = async(req,res) => {
     }
 }
 
-const update_sport_name = async(req,res) => {
+// Update sport
+const update_sport = async(req,res) => {
     try {
         const sport_name_id = req.params.sport_nameId;
         const reqbody = req.body;
-        const sport_name_exist = await sport_name_Service.get_sport_name_by_id(sport_name_id);
+        const sport_name_exist = await sport_name_Service.get_sport_by_id(sport_name_id);
         if(!sport_name_exist){
-            throw new Error("Sport does not exist -!- ");
+            throw new Error("Sport by this name does not exist -!- ");
         }
-        const sport_name_update = await sport_name_Service.update_sport_name(sport_name_id,reqbody);
+        const sport_name_update = await sport_name_Service.update_sport(sport_name_id,reqbody);
         if(!sport_name_update){
             throw new Error("Something went wrong, try again later -!- ");
         }
@@ -49,14 +51,15 @@ const update_sport_name = async(req,res) => {
     }
 }
 
-const delete_sport_name = async(req,res) => {
+// Delete sport
+const delete_sport = async(req,res) => {
     try {
         const sport_name_id = req.params.sport_nameId;
-        const sport_name_exist = await sport_name_Service.get_sport_name_by_id(sport_name_id);
+        const sport_name_exist = await sport_name_Service.get_sport_by_id(sport_name_id);
         if(!sport_name_exist){
-            throw new Error("Sport does not exist -!- ");
+            throw new Error("Sport by this name does not exist -!- ");
         }
-        const sport_name_delete = await sport_name_Service.delete_sport_name(sport_name_id);
+        const sport_name_delete = await sport_name_Service.delete_sport(sport_name_id);
         if(!sport_name_delete){
             throw new Error("Something went wrong, try again later -!- ");
         }
@@ -72,15 +75,16 @@ const delete_sport_name = async(req,res) => {
     }
 }
 
-const get_sport_name_list = async(req,res) => {
+// Sport list
+const get_sport_list = async(req,res) => {
     try {
-        const sport_name_list = await sport_name_Service.get_sport_name_list();
+        const sport_name_list = await sport_name_Service.get_sport_list();
         if(!sport_name_list){
           throw new Error("Sport list data not found -!- ");
         }
         res.status(200).json({
           success: true,
-          message: "Get sport_name list dispatch successfully ^-^ ",
+          message: "Get sport list dispatch successfully ^-^ ",
           data: sport_name_list,
         });
       } catch (error) {
@@ -92,8 +96,8 @@ const get_sport_name_list = async(req,res) => {
 }
 
 module.exports = {
-    create_sport_name,
-    get_sport_name_list,
-    update_sport_name,
-    delete_sport_name
+    create_sport,
+    get_sport_list,
+    update_sport,
+    delete_sport
 }

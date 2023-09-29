@@ -1,5 +1,6 @@
 const { crypto_potential_Service } = require("../services");
 
+// Create crypto potential
 const create_crypto_potential = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_potential = async(req,res) => {
     }
 }
 
+// Update crypto potential
 const update_crypto_potential = async(req,res) => {
     try {
         const crypto_potential_id = req.params.crypto_potentialId;
@@ -49,6 +51,7 @@ const update_crypto_potential = async(req,res) => {
     }
 }
 
+// Delete crypto potential
 const delete_crypto_potential = async(req,res) => {
     try {
         const crypto_potential_id = req.params.crypto_potentialId;
@@ -72,6 +75,7 @@ const delete_crypto_potential = async(req,res) => {
     }
 }
 
+// Crypto potential list
 const get_crypto_potential_list = async(req,res) => {
     try {
         const crypto_potential_list = await crypto_potential_Service.get_crypto_potential_list();

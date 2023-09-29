@@ -1,7 +1,7 @@
 const { Crypto_newsletter } = require("../models");
 
-const get_crypto_newsletter_by_name = async(crypto_newsletter_name) => {
-    return Crypto_newsletter.findOne({crypto_newsletter_name})
+const get_crypto_newsletter_by_topic = async(crypto_newsletter_topic) => {
+    return Crypto_newsletter.findOne({crypto_newsletter_topic})
 }
 
 const create_crypto_newsletter = async(reqbody) => {
@@ -25,7 +25,7 @@ const delete_crypto_newsletter = async(crypto_newsletter_id) => {
 }
 
 module.exports = {
-    get_crypto_newsletter_by_name,
+    get_crypto_newsletter_by_topic,
     create_crypto_newsletter,
     get_crypto_newsletter_list,
     get_crypto_newsletter_by_id,

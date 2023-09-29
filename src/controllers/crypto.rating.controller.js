@@ -1,5 +1,6 @@
 const { crypto_rating_Service } = require("../services");
 
+// Create crypto rating
 const create_crypto_rating = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_rating = async(req,res) => {
     }
 }
 
+// Update crypto rating
 const update_crypto_rating = async(req,res) => {
     try {
         const crypto_rating_id = req.params.crypto_ratingId;
@@ -49,6 +51,7 @@ const update_crypto_rating = async(req,res) => {
     }
 }
 
+// Delete crypto rating
 const delete_crypto_rating = async(req,res) => {
     try {
         const crypto_rating_id = req.params.crypto_ratingId;
@@ -72,6 +75,7 @@ const delete_crypto_rating = async(req,res) => {
     }
 }
 
+// Crypto rating list
 const get_crypto_rating_list = async(req,res) => {
     try {
         const crypto_rating_list = await crypto_rating_Service.get_crypto_rating_list();
@@ -80,7 +84,7 @@ const get_crypto_rating_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get crypto_rating list dispatch successfully ^-^ ",
+          message: "Get crypto rating list dispatch successfully ^-^ ",
           data: crypto_rating_list,
         });
       } catch (error) {

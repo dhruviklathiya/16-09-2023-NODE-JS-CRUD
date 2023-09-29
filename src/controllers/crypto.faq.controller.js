@@ -1,5 +1,6 @@
 const { crypto_faq_Service } = require("../services");
 
+// Create crypto faq
 const create_crypto_faq = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -24,6 +25,7 @@ const create_crypto_faq = async(req,res) => {
     }
 }
 
+// Update crypto faq
 const update_crypto_faq = async(req,res) => {
     try {
         const crypto_faq_id = req.params.crypto_faqId;
@@ -49,6 +51,7 @@ const update_crypto_faq = async(req,res) => {
     }
 }
 
+// Delete crypto faq
 const delete_crypto_faq = async(req,res) => {
     try {
         const crypto_faq_id = req.params.crypto_faqId;
@@ -72,6 +75,7 @@ const delete_crypto_faq = async(req,res) => {
     }
 }
 
+// Crypto faq list
 const get_crypto_faq_list = async(req,res) => {
     try {
         const crypto_faq_list = await crypto_faq_Service.get_crypto_faq_list();

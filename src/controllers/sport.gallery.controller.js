@@ -1,11 +1,12 @@
 const { sport_gallery_Service } = require("../services");
 
+// Create sport gallery
 const create_sport_gallery = async(req,res) => {
     try {
         const reqbody = req.body;
-        const sport_gallery_exist = await sport_gallery_Service.get_sport_gallery_by_name(reqbody.sport_gallery_name);
+        const sport_gallery_exist = await sport_gallery_Service.get_sport_gallery_by_no(reqbody.sport_gallery_name);
         if(sport_gallery_exist){
-            throw new Error("Sport gallery on this name already exist -!- ");
+            throw new Error("Sport gallery on this no already exist -!- ");
         }
         const sport_gallery = await sport_gallery_Service.create_sport_gallery(reqbody);
         if(!sport_gallery){
@@ -24,6 +25,7 @@ const create_sport_gallery = async(req,res) => {
     }
 }
 
+// Update sport gallery
 const update_sport_gallery = async(req,res) => {
     try {
         const sport_gallery_id = req.params.sport_galleryId;
@@ -49,6 +51,7 @@ const update_sport_gallery = async(req,res) => {
     }
 }
 
+// Delete sport gallery
 const delete_sport_gallery = async(req,res) => {
     try {
         const sport_gallery_id = req.params.sport_galleryId;
@@ -72,6 +75,7 @@ const delete_sport_gallery = async(req,res) => {
     }
 }
 
+// Sport gallery list
 const get_sport_gallery_list = async(req,res) => {
     try {
         const sport_gallery_list = await sport_gallery_Service.get_sport_gallery_list();
@@ -80,7 +84,7 @@ const get_sport_gallery_list = async(req,res) => {
         }
         res.status(200).json({
           success: true,
-          message: "Get sport_gallery list dispatch successfully ^-^ ",
+          message: "Get sport gallery list dispatch successfully ^-^ ",
           data: sport_gallery_list,
         });
       } catch (error) {
