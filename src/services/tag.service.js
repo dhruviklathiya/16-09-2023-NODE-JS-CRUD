@@ -31,4 +31,4 @@ module.exports = {
     get_tag_by_id,
     update_tag,
     delete_tag
-}``
+}
