@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-// create tag
+// create tag validation
 const create_tag = {
   body: Joi.object().keys({
     tag_name: Joi.string().required().trim(),
