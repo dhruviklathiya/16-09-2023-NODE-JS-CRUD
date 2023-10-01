@@ -1,8 +1,8 @@
 const Joi = require("joi");
 const dotenv = require("dotenv");
-
+// Using dotenv package for impoting environment variable
 dotenv.config({ path: "./.env"});
-
+// envvarsSchema defining validation over env
 const envVarsSchema = Joi.object({
   PORT: Joi.number().default(3000),
   MONGODB_URL: Joi.string().trim().description("Mongodb url"),

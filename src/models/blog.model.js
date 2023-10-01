@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+// Creating schema
 const blog_Schema = new mongoose.Schema(
     {
         blog_title:{
@@ -20,6 +20,7 @@ const blog_Schema = new mongoose.Schema(
         versionKey:false
     }
 )
-
+// Creating model
 const blog = mongoose.model("Blog",blog_Schema);
+// Exporting model
 module.exports = blog

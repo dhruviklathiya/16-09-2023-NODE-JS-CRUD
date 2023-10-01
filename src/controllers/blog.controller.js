@@ -1,5 +1,5 @@
 const { blog_Service } = require("../services");
-
+// Create blog
 const create_blog = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -23,7 +23,7 @@ const create_blog = async(req,res) => {
         })
     }
 }
-
+// Update blog
 const update_blog = async(req,res) => {
     try {
         const blog_id = req.params.blogId;
@@ -48,7 +48,7 @@ const update_blog = async(req,res) => {
         })
     }
 }
-
+// Delete blog
 const delete_blog = async(req,res) => {
     try {
         const blog_id = req.params.blogId;
@@ -71,7 +71,7 @@ const delete_blog = async(req,res) => {
         })
     }
 }
-
+// Get blog list
 const get_blog_list = async(req,res) => {
     try {
         const blog_list = await blog_Service.get_blog_list();
@@ -90,7 +90,7 @@ const get_blog_list = async(req,res) => {
         });
       }
 }
-
+// Exporting controller object
 module.exports = {
     create_blog,
     get_blog_list,

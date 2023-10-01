@@ -1,5 +1,5 @@
 const { buyer_Service } = require("../services");
-
+// Create buyer
 const create_buyer = async(req,res) => {
     try {
         const reqbody = req.body;
@@ -23,7 +23,7 @@ const create_buyer = async(req,res) => {
         })
     }
 }
-
+// Update buyer
 const update_buyer = async(req,res) => {
     try {
         const buyer_id = req.params.buyerId;
@@ -48,7 +48,7 @@ const update_buyer = async(req,res) => {
         })
     }
 }
-
+// Delete buyer
 const delete_buyer = async(req,res) => {
     try {
         const buyer_id = req.params.buyerId;
@@ -71,7 +71,7 @@ const delete_buyer = async(req,res) => {
         })
     }
 }
-
+// Get buyer list
 const get_buyer_list = async(req,res) => {
     try {
         const buyer_list = await buyer_Service.get_buyer_list();
@@ -90,7 +90,7 @@ const get_buyer_list = async(req,res) => {
         });
       }
 }
-
+// Exporting contoller object
 module.exports = {
     create_buyer,
     get_buyer_list,
